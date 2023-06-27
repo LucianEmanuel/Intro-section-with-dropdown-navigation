@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <header class="header flex-flow">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.svg" alt="Home" /></a>
+      </div>
+
+      <div class="wrapper">
+        <nav class="nav-menu flex-flow">
+          <ul class="nav-items">
+            <li class="nav-item drop first">
+              <a href="#" class="flex-flow">
+                Features
+                <img
+                  src="images/icon-arrow-down.svg"
+                  alt="Open submenu"
+                  class="submenu-1"
+                />
+              </a>
+            </li>
+            <ul class="dropdown-items drop_1">
+              <li class="dropdown-item">
+                <a href="#" class="flex-flow">
+                  <img src="images/icon-todo.svg" alt="Todo list" />
+                  Todo List
+                </a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="flex-flow">
+                  <img src="images/icon-calendar.svg" alt="Calendar list" />
+                  Calendar
+                </a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="flex-flow">
+                  <img src="images/icon-reminders.svg" alt="Todo list" />
+                  Reminders
+                </a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="flex-flow">
+                  <img src="images/icon-planning.svg" alt="Todo list" />
+                  Planning
+                </a>
+              </li>
+            </ul>
+            <li class="nav-item drop second">
+              <a href="#" class="flex-flow"
+                >Company
+                <img
+                  src="images/icon-arrow-down.svg"
+                  alt="Open submeniu"
+                  class="submenu-2"
+              /></a>
+            </li>
+            <ul class="dropdown-items drop_2">
+              <li class="dropdown-item">
+                <a href="#" class="flex-flow"> History </a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="flex-flow"> Our Team </a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="flex-flow"> Blog </a>
+              </li>
+            </ul>
+            <li class="nav-item"><a href="#">Careers</a></li>
+            <li class="nav-item"><a href="#">About</a></li>
+          </ul>
+          <div class="login">
+            <button class="empty-btn btn">Login</button>
+            <button class="border-btn btn">Register</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="hamburger-menu">
+        <img src="images/icon-menu.svg" class="open-menu" alt="Open menu" />
+        <img
+          src="images/icon-close-menu.svg"
+          class="close-menu hidden"
+          alt="Close menu"
+        />
+      </div>
+    </header>
+    <main class="main-content">
+      <section class="content">
+        <h1>Make remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button class="btn plain-btn">Learn More</button>
+        <div class="sponsors flex-flow">
+          <div class="img-wrapper">
+            <img src="images/client-databiz.svg" alt="Sponsor-Databiz logo" />
+          </div>
+          <div class="img-wrapper">
+            <img
+              src="images/client-audiophile.svg"
+              alt="Sponsor-Audiophile logo"
+            />
+          </div>
+          <div class="img-wrapper">
+            <img src="images/client-meet.svg" alt="Sponsor-Meet logo" />
+          </div>
+          <div class="img-wrapper">
+            <img src="images/client-maker.svg" alt="Sponsor-Maker logo" />
+          </div>
+        </div>
+      </section>
+      <div class="hero-img">
+        <picture>
+          <source
+            media="(min-width: 1180px)"
+            srcset="images/image-hero-desktop.png"
+          />
+          <img src="images/image-hero-mobile.png" alt="Decorative image" />
+        </picture>
+      </div>
+    </main>
+    <div class="modal hidden"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

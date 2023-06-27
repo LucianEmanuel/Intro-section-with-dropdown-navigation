@@ -1,0 +1,365 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+/* html,
+body {
+  height: 100%;
+}
+ */
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --clr-primary-light: hsl(0, 0%, 91%);
+  --clr-primary-medium: hsl(0, 0%, 41%);
+  --clr-primary-dark: hsl(0, 0%, 8%);
+  --ff-primary: "Epilogue", sans-serif;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  /* Font size settings for mobile */
+  --fs-body: 1.125rem;
+  --fs-heading-1: 2rem;
+  /* Spaces */
+  --min-gap: 1rem;
+  --med-gap: 2rem;
+  --large-gap: 3rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  line-height: 1.6;
+  color: var(--clr-primary-medium);
+  background-color: var(--clr-primary-light);
+  font-weight: var(--fw-semi-bold);
+}
+h1 {
+  color: var(--clr-primary-dark);
+  font-size: var(--fs-heading-1);
+  line-height: 1.1;
+  font-weight: var(--fw-bold);
+}
+.btn {
+  color: inherit;
+}
+.btn:hover {
+  color: var(--clr-primary-dark);
+}
+.empty-btn {
+  border: none;
+  background-color: transparent;
+}
+.border-btn {
+  background-color: transparent;
+  padding: 0.5rem 2rem;
+  border: 1px solid var(--clr-primary-medium);
+  border-radius: 10px;
+}
+.border-btn:hover {
+  border: 1px solid var(--clr-primary-dark);
+}
+.flex-flow {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  justify-content: space-between;
+  padding: var(--min-gap) 5%;
+  position: relative;
+}
+.logo {
+  padding-top: 1.5rem;
+}
+
+.main-content {
+  display: grid;
+  gap: var(--large-gap);
+  padding-bottom: 4rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+.content {
+  order: 2;
+  padding-inline: 5%;
+  text-align: center;
+}
+.content > * + * {
+  margin-top: var(--min-gap);
+}
+.hero-img {
+  order: 1;
+}
+.plain-btn {
+  background-color: var(--clr-primary-dark);
+  color: var(--clr-primary-light);
+  border: 1px solid var(--clr-primary-dark);
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+}
+.plain-btn:hover,
+.plain-btn:focus {
+  background-color: transparent;
+  color: var(--clr-primary-dark);
+}
+.sponsors {
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: var(--med-gap);
+  padding-inline: 1rem;
+}
+.sponsors img {
+  width: 80%;
+}
+/* Mobile menu */
+
+.wrapper {
+  display: none;
+  position: absolute;
+  width: 65%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background-color: var(--clr-primary-light);
+  z-index: 100;
+}
+.dropdown-items {
+  display: none;
+}
+.nav-menu {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 6rem 2rem;
+  gap: 2rem;
+}
+.nav-items > * + * {
+  margin-top: 1rem;
+}
+.nav-item a {
+  gap: 0.5rem;
+  color: var(--clr-primary-medium);
+}
+.nav-item:hover a,
+.dropdown-item:hover a {
+  color: var(--clr-primary-dark);
+}
+.login {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.hamburger-menu {
+  position: relative;
+}
+.close-menu {
+  position: absolute;
+  top: 0;
+  z-index: 101;
+}
+.dropdown-items {
+  /* display: flex; */
+  flex-direction: column;
+  gap: 1rem;
+}
+.dropdown-item .flex-flow {
+  gap: var(--min-gap);
+  padding-left: var(--med-gap);
+}
+.dropdown-item a {
+  color: var(--clr-primary-medium);
+}
+
+@media (min-width: 1180px) {
+  .main-content {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1900px;
+    padding-inline: 10%;
+    padding-bottom: 0;
+    gap: 5rem;
+    place-items: center;
+  }
+  .content {
+    order: 1;
+    text-align: left;
+  }
+  h1 {
+    font-size: 6rem;
+    white-space: break-spaces;
+  }
+  .content p {
+    font-size: 18px;
+    max-width: 80%;
+  }
+
+  .content > * + * {
+    margin-top: var(--med-gap);
+  }
+  .sponsors {
+    padding-top: var(--large-gap);
+  }
+
+  .hero-img {
+    order: 2;
+    line-height: 0;
+  }
+  picture img {
+    max-height: 80vh;
+    object-fit: cover;
+  }
+  /* Desktop menu */
+  .hamburger-menu {
+    display: none;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+  }
+  .login {
+    width: 10%;
+  }
+  .wrapper {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  .logo {
+    padding-top: 1rem;
+  }
+  .nav-menu {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+    position: relative;
+  }
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .nav-items > * + * {
+    margin-top: 0;
+  }
+
+  .nav-item a {
+    gap: 0.5rem;
+    color: var(--clr-primary-medium);
+  }
+  .nav-item:hover a,
+  .dropdown-item:hover a {
+    color: var(--clr-primary-dark);
+  }
+  .login {
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .dropdown-items {
+    position: absolute;
+    top: 70%;
+    padding: 1rem;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #fff;
+  }
+  .drop_1 {
+    left: -30px;
+  }
+  .drop_2 {
+    left: 150px;
+  }
+  .dropdown-items > * + * {
+    padding-top: 0.5rem;
+  }
+  .dropdown-item .flex-flow {
+    gap: var(--min-gap);
+    padding-left: var(--med-gap);
+  }
+  .dropdown-item a {
+    color: var(--clr-primary-medium);
+    padding: 0 !important;
+  }
+}
+
+/* Classess for JS */
+.modal {
+  position: absolute;
+  background-color: rgba(5, 5, 5, 0.4);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.rotate {
+  transform: rotate(180deg);
+  transition: all 300ms ease-in-out;
+}
+.block {
+  display: block;
+  transition: display 300ms ease-in-out;
+}
+.overflow {
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+}
